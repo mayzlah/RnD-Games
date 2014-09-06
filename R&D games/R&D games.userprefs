@@ -1,0 +1,19 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CreateTargets.cs">
+    <Files>
+      <File FileName="Assets\Scripts\ShipMovement.cs" Line="32" Column="22" />
+      <File FileName="Assets\Scripts\TowerRotate.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\FireProjectile.cs" Line="15" Column="105" />
+      <File FileName="Assets\Scripts\ProjectileHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TargetHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TargetScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CreateObstacles.cs" Line="21" Column="3" />
+      <File FileName="Assets\Scripts\CreateTargets.cs" Line="33" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
