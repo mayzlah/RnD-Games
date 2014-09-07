@@ -49,6 +49,8 @@
      <Compile Include="Assets\Scripts\CreateObstacles.cs" />
      <Compile Include="Assets\Scripts\CreateTargets.cs" />
      <Compile Include="Assets\Scripts\FireProjectile.cs" />
+     <Compile Include="Assets\Scripts\GameMenu.cs" />
+     <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\ProjectileHandler.cs" />
      <Compile Include="Assets\Scripts\ShipMovement.cs" />
      <Compile Include="Assets\Scripts\TargetHandler.cs" />

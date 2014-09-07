@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FireProjectile : MonoBehaviour {
 
-	public float cooldown = 2f;
+	public float cooldown = 1f;
 	public Rigidbody projectile;
 
 	private float fireTime;

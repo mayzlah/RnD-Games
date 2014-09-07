@@ -30,7 +30,7 @@ public class CreateTargets : MonoBehaviour {
 			                       , Random.Range (closest, farest) * RandomSign ()
 			                       , Random.Range (closest, farest) * RandomSign ());
 
-						Rigidbody newTarget = (Rigidbody)Instantiate (Target, position, rotation);
+						Instantiate (Target, position, rotation);
 				}
 
 	}
