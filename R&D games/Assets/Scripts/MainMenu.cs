@@ -26,8 +26,13 @@ public class MainMenu : MonoBehaviour {
 	private HostData[] serverList;
 	public int numberOfServers;
 
+	[RPC]
+	private void LoadMultipLayerLevel(){
+		Application.LoadLevel("multiplayer");
+	}
+
 	public void StartServer(){
-		Debug.Log(Network.InitializeServer(4, port, !Network.HavePublicAddress()));
+		Debug.Log(Network.InitializeServer(1, port, !Network.HavePublicAddress()));
 
 	}
 
@@ -79,6 +84,7 @@ public class MainMenu : MonoBehaviour {
 		                          ,Screen.height*0.5f
 		                          ,Screen.width*0.5f
 		                          ,Screen.height*0.1f), "Connect")) {
+			GetServerList();
 			isMainMenu = false;
 			isClientStart = true;
 		}
@@ -131,6 +137,19 @@ public class MainMenu : MonoBehaviour {
 			MasterServer.UnregisterHost();
 			Network.Disconnect();
 		}
+		GUI.Label(new Rect(Screen.width*.6f
+		                   ,Screen.height*.2f
+		                   ,Screen.width*.2f
+		                   ,Screen.height*.2f),  Network.connections.Length.ToString());
+		if (Network.connections.Length==1)
+		{
+			if(GUI.Button(new Rect(Screen.width*.6f
+			                       ,Screen.height*.6f
+			                       ,Screen.width*.2f
+			                       ,Screen.height*.2f),  "Play")){
+				networkView.RPC("LoadMultipLayerLevel", RPCMode.All);
+			}
+		}
 	}
 
 	private void ClientStartGUI(){
@@ -153,12 +172,30 @@ public class MainMenu : MonoBehaviour {
 			                   ,Screen.height*.2f), "No Servers Found");
 		}
 		else{
-			GUI.Label(new Rect(Screen.width*.6f
-			                   ,Screen.height*.2f
-			                   ,Screen.width*.2f
-			                   ,Screen.height*.2f), serverList[0].gameName);
+			int i;
+			for(i=0;i<numberOfServers;i++)
+			{
+				if(GUI.Button(new Rect(Screen.width*.6f
+			                   		,Screen.height*.2f
+			                   		,Screen.width*.2f
+			                   		,Screen.height*.2f), serverList[i].gameName)){
+					Debug.Log (Network.Connect(serverList[i]));
+					isClient = true;
+					isClientStart = false;
+				}
+			}				
 		}
 
+	}
+
+	private void ClientGUI(){
+		if(GUI.Button(new Rect(Screen.width*.2f
+		                       ,Screen.height*.5f
+		                       ,Screen.width*.2f
+		                       ,Screen.height*.2f), "Back")){
+			isClientStart = true;
+			isClient = false;
+		}
 	}
 
 
@@ -184,8 +221,11 @@ public class MainMenu : MonoBehaviour {
 		}
 		if(isClientStart)
 		{
-			GetServerList();
 			ClientStartGUI();
+		}
+		if(isClient)
+		{
+			ClientGUI();
 		}
 	}
 }

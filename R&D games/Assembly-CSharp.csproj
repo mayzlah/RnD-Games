@@ -46,11 +46,22 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\CameraControl.cs" />
      <Compile Include="Assets\Scripts\CreateObstacles.cs" />
      <Compile Include="Assets\Scripts\CreateTargets.cs" />
      <Compile Include="Assets\Scripts\FireProjectile.cs" />
      <Compile Include="Assets\Scripts\GameMenu.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\Multiplayer\MultiplayerFire.cs" />
+     <Compile Include="Assets\Scripts\Multiplayer\MultiplayerGUI.cs" />
+     <Compile Include="Assets\Scripts\Multiplayer\MultiplayerIfGunner.cs" />
+     <Compile Include="Assets\Scripts\Multiplayer\MultiplayerIfPilot.cs" />
+     <Compile Include="Assets\Scripts\Multiplayer\MultiplayerObstacleSpawn.cs" />
+     <Compile Include="Assets\Scripts\Multiplayer\MultiplayerProjectileHandler.cs" />
+     <Compile Include="Assets\Scripts\Multiplayer\MultiplayerShipMovement.cs" />
+     <Compile Include="Assets\Scripts\Multiplayer\MultiplayerTargetHandeler.cs" />
+     <Compile Include="Assets\Scripts\Multiplayer\MultiplayerTargetSpawn.cs" />
+     <Compile Include="Assets\Scripts\Multiplayer\MultiplayerTower.cs" />
      <Compile Include="Assets\Scripts\ProjectileHandler.cs" />
      <Compile Include="Assets\Scripts\ShipMovement.cs" />
      <Compile Include="Assets\Scripts\TargetHandler.cs" />
